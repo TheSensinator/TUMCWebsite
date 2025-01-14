@@ -1,19 +1,14 @@
-// Path to the HTML file containing the announcements
-const htmlFile = "TUMChome.html";
+const indexFile = "index.html";
 
-// Function to load the announcements section
 async function loadAnnouncements() {
     try {
-        // Fetch the TUMChome.html file
-        const response = await fetch(htmlFile);
-        if (!response.ok) throw new Error(`Failed to fetch ${htmlFile}`);
+        const response = await fetch(indexFile);
+        if (!response.ok) throw new Error(`Failed to fetch ${indexFile}`);
         const html = await response.text();
 
-        // Parse the fetched HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
 
-        // Extract the #announcements section
         const announcements = doc.querySelector("#announcements");
         if (!announcements) throw new Error("Announcements section not found");
 
