@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Universal Aspects */
+body {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('TUMCExterior.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: black;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 192, 203, 0.8), rgba(251, 233, 231, 0.8));
+    z-index: -1;
+}
+body h2 {
+    font-family: 'Alegreya', sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Major Categories */
+/* Footer */
+footer {
+    background: #b71c1c;
+    color: #fff;
+    font-style: italic;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+}
+footer p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+/* Header */
+header {
+    background: #b71c1c;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+header h1 {
+    font-family: 'Lugrasimo', serif;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 4rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+header p {
+    margin: 0.2rem 0 0;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Subsection Aspects */
+nav {
+    background: #d32f2f;
+    padding: 0.5rem;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+    position: relative;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem
+}
+nav ul li a:hover {
+    color: #ffe082;
+}
+section {
+    border-top: 5px dashed #D265A2;
+    border-bottom: 5px dashed #D265A2;
+    padding: 0 1rem;
+}
+section p {
+    font-family:'Roboto', sans-serif;
+}
+section ul {
+    font-family:'Roboto', sans-serif;
+}
+#basic-info, #double-links, #pic-and-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    align-items: stretch;
+}
+#double-links {
+    text-align: center;
+}
+#links {
+    text-align: center;
+    padding: 1rem 0;
+}
+#links a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+#quote {
+    font-family: 'Charm', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#services {
+    border-left: 5px dashed #D265A2;
+}
+#services ul li {
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+#welcome {
+    border-right: 5px dashed #D265A2;
+}
+.social-logo {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+.social-logo:hover {
+    transform: scale(1.2);
+}
+
+/* Form Behavior */
+form label, form input, form textarea, form button {
+    display: block;
+    width: 30%;
+    margin-bottom: 1rem;
+}
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #d32f2f;
+    outline: none;
+}
+textarea {
+    resize: vertical;
+}
+
+/* Button Behavior */
+button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: #d32f2f;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+button:hover {
+    transform: scale(1.1);
+    border-color: #f21111;
+}
+
+
+#livestream {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.stream-button {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: #ff4d4d;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stream-button:hover {
+    background-color: #e60000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dashes-design {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dash {
+    width: 10%;
+    height: 4px;
+    background-color: #d32f2f;
+    border-radius: 2px;
+}
+
+#top {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.donation-btn {
+    margin-bottom: 1rem;
+}
+
+#announcements, #contact, #donate, #history, #link-left, #link-right, #pic, #request-form, #services, #team, #welcome {
+    width: 48%;
+    font-size: 1.5rem;
+}
+#announcements, #contact, #donate, #history, #link-left, #request-form {
+    border-right: 5px dashed #D265A2;
+}
+#link-right {
+    border-left: 5px dashed #D265A2;
+}
+#pic {
+    border-left: 5px dashed #D265A2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+.pic {
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+    border: 2rem 2rem 0 2rem;
+}
+.large {
+    max-height: 500px;
+}
+.image-wrapper {
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack content (image + caption) vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Ensures any text (caption) is centered */
+}
+figcaption {
+    font: italic smaller sans-serif;
+    text-align: center;
+    padding: 0;
+}
+figure {
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+}
+
+.dropdown-menu {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d32f2f;
+    display: none;
+    z-index: 2;
+}
+
+.dropdown-menu li a {
+    color: white;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #d32f2f;
+}
+
+/* Display dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.map {
+    padding: 2rem;
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Alegreya', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.service-item {
+    width: 40%;
+    border: 2px solid #d265a2;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.service-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

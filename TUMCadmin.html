@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Tonica United Methodist Church</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Tonica United Methodist Church</h1>
+        </div>
+        <p>Est. 1904</p>
+        <p>A safe place to discover, explore, and grow in faith</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="TUMCabout.html">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="TUMChistory.html">History</a></li>
+                    <li><a href="TUMCteam.html">Our Team</a></li>
+                </ul>
+            </li>
+            <li><a href="TUMCdonate.html">Donate</a></li>
+            <li class="dropdown">
+                <a href="TUMCcontacthub.html">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="TUMCcontact.html">Contact Info</a></li>
+                    <li><a href="TUMCrequest.html">Prayer Request</a></li>
+                </ul>
+            </li>
+            <li><a href="TUMCprograms.html">Programs</a></li>
+            <li><a href="TUMCgallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <section id="top">
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+        <div id="livestream">
+            <div class="button-container">
+                <a href="https://fb.watch/wW-Qg3eul6/" class="stream-button" target="_blank">View our last livestream!</a>
+            </div>
+        </div>
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+        <div class="dashes-design">
+            <span class="dash"></span>
+            <span class="dash"></span>
+        </div>
+    </section>
+    <div id="admin-login">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="admin-panel">
+        <h2>Admin Panel</h2>
+
+        <div id="announcements-container">
+            <!-- Announcements content will load here -->
+        </div>
+    
+        <button class="button" onclick="saveChanges()">Save Changes</button>
+    
+    </div>    
+    <div class="dashes-design">
+        <span class="dash"></span>
+        <span class="dash"></span>
+    </div>
+    <div class="dashes-design">
+        <span class="dash"></span>
+        <span class="dash"></span>
+        <span class="dash"></span>
+    </div>
+    <div class="dashes-design">
+        <span class="dash"></span>
+        <span class="dash"></span>
+    </div>
+    <footer>
+        <p>Pastor Phil Jackson</p>
+        <p>&copy; 2025 Tonica United Methodist Church. All Rights Reserved.</p>
+    </footer>
+
+    <script src="TUMCadmin.js"></script>
+</body>
+</html>
