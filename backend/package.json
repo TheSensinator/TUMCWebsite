@@ -1,18 +1,17 @@
 {
-  "name": "TUMC-backend",
+  "name": "tonica-church-backend",
   "version": "1.0.0",
-  "description": "A sample backend for Render deployment",
+  "description": "Backend for Tonica United Methodist Church website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  },
-  "author": "Josh Sensiba",
-  "license": "MIT"
+    "express": "^4.18.2",
+    "dotenv": "^10.0.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "cors": "^2.8.5"
+  }
 }
