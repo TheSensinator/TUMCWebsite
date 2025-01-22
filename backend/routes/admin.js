@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const router = express.Router();
+const { getAnnouncements, updateAnnouncements } = require("../controllers/announcementsController");
+const authMiddleware = require("../middleware/authMiddleware");
 
 // Example hardcoded admin credentials (use environment variables in production)
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
@@ -18,7 +20,6 @@ router.post('/login', async (req, res) => {
         return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    // Compare password with hashed password
     const isMatch = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
     if (!isMatch) {
         return res.status(401).json({ message: 'Invalid username or password' });
@@ -45,5 +46,9 @@ router.get('/dashboard', (req, res) => {
         res.status(401).json({ message: 'Invalid token' });
     }
 });
+
+router.get("/", authMiddleware, getAnnouncements);
+
+router.put("/", authMiddleware, updateAnnouncements);
 
 module.exports = router;
