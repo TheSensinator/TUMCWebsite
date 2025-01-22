@@ -4,13 +4,12 @@ const dotenv = require('dotenv');
 const session = require('express-session');
 const authRoutes = require('./routes/authRoutes');
 const adminRouter = require('./routes/admin');
+const app = express();
 
 app.use('/api/admin', adminRouter);
 
 
 dotenv.config(); // Load environment variables
-
-const app = express();
 
 app.use(cors());
 app.use(express.json());
