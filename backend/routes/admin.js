@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 
 const { getAnnouncements, updateAnnouncements } = require("../controllers/announcementsController");
-const authMiddleware = require("../middleware/authMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // Example hardcoded admin credentials (use environment variables in production)
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
