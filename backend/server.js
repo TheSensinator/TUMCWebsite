@@ -29,7 +29,8 @@ app.use(
   })
 );
 
-// Example routes
+app.use(cors(corsOptions));
+
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRouter);
 
