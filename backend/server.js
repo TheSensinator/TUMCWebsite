@@ -11,7 +11,12 @@ app.use('/api/admin', adminRouter);
 
 dotenv.config(); // Load environment variables
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://tonicaumc.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -26,7 +31,7 @@ app.use(
 
 // Example routes
 app.use('/api/auth', authRoutes);
-app.use("/api/announcements", adminRouter);
+app.use('/api/admin', adminRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
