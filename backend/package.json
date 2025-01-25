@@ -13,6 +13,7 @@
     "dotenv": "^10.0.0",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "mongoose": "^6.10.0",
   }
 }
