@@ -6,16 +6,14 @@ const authRoutes = require('./routes/authRoutes');
 const adminRouter = require('./routes/admin');
 const app = express();
 
-dotenv.config(); // Load environment variables
+dotenv.config();
 
-const corsOptions = {
-    origin: 'https://tonicaumc.com',  // Only allow requests from this domain
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
-    credentials: true,  // Allow cookies to be sent with requests
-};
-
-// Apply CORS middleware to all routes
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://tonicaumc.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: 'Content-Type,Authorization'
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
