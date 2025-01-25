@@ -6,7 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const adminRouter = require('./routes/admin');
 const announcementsRouter = require('./routes/announcementsRouter');
 const app = express();
-const mongoose = require("mongoose");
+const mongoose = require("mongodb");
 
 const MONGO_URI = process.env.MONGO_URI;
 
