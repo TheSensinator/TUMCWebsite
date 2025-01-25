@@ -6,6 +6,25 @@ const authRoutes = require('./routes/authRoutes');
 const adminRouter = require('./routes/admin');
 const announcementsRouter = require('./routes/announcementsRouter');
 const app = express();
+const mongoose = require("mongoose");
+
+const MONGO_URI = process.env.MONGO_URI;
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB successfully");
+  } catch (err) {
+    console.error("Failed to connect to MongoDB:", err.message);
+    process.exit(1); // Exit the app if connection fails
+  }
+};
+
+module.exports = connectDB;
+
 
 dotenv.config();
 
