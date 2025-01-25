@@ -28,6 +28,8 @@ module.exports = connectDB;
 
 dotenv.config();
 
+connectDB();
+
 app.use(cors({
     origin: 'https://tonicaumc.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
