@@ -1,20 +1,35 @@
-let announcements = [
-    "Our first Sunday potluck is coming up on February 2nd!",
-    "Visit us every Tuesday for Friendly Sew 'N Sews between 10 AM and 3 PM.",
-    "Choir practice is every Thursday at 10 AM!",
-];
-
-exports.getAnnouncements = (req, res) => {
-    res.status(200).json(announcements);
-};
-
 exports.updateAnnouncements = (req, res) => {
-    const { updates } = req.body;
+    const {
+        livestreamLink,
+        announcement1,
+        announcement2,
+        announcement3,
+        announcement4,
+        announcement5,
+    } = req.body;
 
-    if (!Array.isArray(updates) || updates.length !== announcements.length) {
-        return res.status(400).json({ message: "Invalid updates format." });
+    // Validate that at least one field is being updated
+    if (
+        !livestreamLink &&
+        !announcement1 &&
+        !announcement2 &&
+        !announcement3 &&
+        !announcement4 &&
+        !announcement5
+    ) {
+        return res.status(400).json({ message: "No fields provided for update." });
     }
 
-    announcements = updates; // Replace the old values with the new ones
-    res.status(200).json({ message: "Announcements updated successfully!", announcements });
+    // Update the fields that were provided
+    if (livestreamLink) announcements.livestreamLink = livestreamLink;
+    if (announcement1) announcements.announcement1 = announcement1;
+    if (announcement2) announcements.announcement2 = announcement2;
+    if (announcement3) announcements.announcement3 = announcement3;
+    if (announcement4) announcements.announcement4 = announcement4;
+    if (announcement5) announcements.announcement5 = announcement5;
+
+    res.status(200).json({
+        message: "Announcements updated successfully!",
+        announcements,
+    });
 };
