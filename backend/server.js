@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const session = require('express-session');
 const authRoutes = require('./routes/authRoutes');
 const adminRouter = require('./routes/admin');
+const announcementsRouter = require('./routes/announcementsRouter');
 const app = express();
 
 dotenv.config();
@@ -27,8 +28,10 @@ app.use(
   })
 );
 
+// Route setup
 app.use('/api/admin', adminRouter);
 app.use('/api/auth', authRoutes);
+app.use('/api/announcements', announcementsRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
