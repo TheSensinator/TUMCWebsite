@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 // Mock user (replace with database)
-const admin = { username: 'admin', passwordHash: bcrypt.hashSync('supersecret', 10) };
+const admin = { username: 'admin', passwordHash: bcrypt.hashSync('test', 10) };
 
 exports.login = (req, res) => {
   const { username, password } = req.body;
