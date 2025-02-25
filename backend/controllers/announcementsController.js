@@ -15,21 +15,17 @@ exports.getAnnouncements = async (req, res) => {
 
 // Update announcements
 exports.updateAnnouncements = async (req, res) => {
-  const { livestreamLink, announcement1, announcement2, announcement3, announcement4, announcement5 } = req.body;
+  const { livestreamLink, announcement } = req.body;
 
   try {
     let announcements = await Announcement.findOne();
     if (!announcements) {
       // Create a new announcements document if none exists
-      announcements = new Announcement({ livestreamLink, announcement1, announcement2, announcement3, announcement4, announcement5 });
+      announcements = new Announcement({ livestreamLink, announcement });
     } else {
       // Update fields
       if (livestreamLink) announcements.livestreamLink = livestreamLink;
-      if (announcement1) announcements.announcement1 = announcement1;
-      if (announcement2) announcements.announcement2 = announcement2;
-      if (announcement3) announcements.announcement3 = announcement3;
-      if (announcement4) announcements.announcement4 = announcement4;
-      if (announcement5) announcements.announcement5 = announcement5;
+      if (announcements) announcements.announcement = announcements;
     }
 
     await announcements.save();
