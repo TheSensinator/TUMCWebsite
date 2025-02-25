@@ -3,9 +3,9 @@ const Announcement = require("../models/Announcements");
 // Get announcements
 exports.getAnnouncements = async (req, res) => {
   try {
-    const announcements = await Announcement.findOne();
+    const announcements = await Announcement.findOne().select("announcement");
     if (!announcements) {
-      return res.status(404).json({ message: "Announcements not found" });
+      return res.status(404).json({ announcement: announcements.announcement});
     }
     res.status(200).json(announcements);
   } catch (err) {
@@ -25,7 +25,7 @@ exports.updateAnnouncements = async (req, res) => {
     } else {
       // Update fields
       if (livestreamLink) announcements.livestreamLink = livestreamLink;
-      if (announcements) announcements.announcement = announcements;
+      if (announcements) announcements.announcement = announcement;
     }
 
     await announcements.save();
